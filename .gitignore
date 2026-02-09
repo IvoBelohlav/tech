@@ -20,6 +20,11 @@
 # production
 /build
 
+# lighthouse (generated reports/artifacts)
+.lighthouseci/
+*.report.html
+*.report.json
+
 # misc
 .DS_Store
 *.pem
