@@ -1,0 +1,66 @@
+.wrap {
+  position: relative;
+  border-radius: 22px;
+  background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.78),
+      rgba(255, 255, 255, 0.54)
+    ),
+    radial-gradient(
+      500px 280px at 35% 25%,
+      rgba(227, 90, 45, 0.16),
+      transparent 60%
+    ),
+    radial-gradient(
+      520px 320px at 70% 60%,
+      rgba(12, 122, 117, 0.12),
+      transparent 65%
+    );
+  border: 1px solid var(--stroke);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  height: 360px;
+  aspect-ratio: 4 / 3;
+  min-height: 320px;
+}
+
+.fallback {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  padding: 24px;
+}
+
+.caption {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 10px;
+  border-radius: 14px;
+  border: 1px solid var(--stroke-2);
+  background: rgba(255, 255, 255, 0.66);
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: var(--accent);
+  box-shadow: 0 0 0 6px rgba(227, 90, 45, 0.12);
+}
+
+.canvas {
+  width: 100%;
+  height: 100%;
+}
+
+@media (max-width: 520px) {
+  .wrap {
+    height: 320px;
+  }
+}

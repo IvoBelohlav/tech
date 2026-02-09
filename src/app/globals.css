@@ -1,0 +1,119 @@
+:root {
+  color-scheme: light;
+
+  --bg: #f7f2ea;
+  --fg: #141312;
+  --muted: rgba(20, 19, 18, 0.66);
+  --muted-2: rgba(20, 19, 18, 0.5);
+
+  --card: rgba(255, 255, 255, 0.65);
+  --stroke: rgba(20, 19, 18, 0.14);
+  --stroke-2: rgba(20, 19, 18, 0.1);
+
+  --accent: #e35a2d;
+  --accent-2: #0c7a75;
+  --accent-3: #f1c04c;
+
+  --shadow: 0 20px 60px rgba(20, 19, 18, 0.12);
+  --radius: 20px;
+
+  --max: 1120px;
+  --gutter: 20px;
+
+  --font-sans: ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--fg);
+  background: radial-gradient(
+        1200px 800px at 8% -10%,
+        rgba(227, 90, 45, 0.18),
+        transparent 60%
+      ),
+    radial-gradient(
+        1000px 700px at 92% 8%,
+        rgba(12, 122, 117, 0.14),
+        transparent 58%
+      ),
+    radial-gradient(
+        900px 650px at 50% 110%,
+        rgba(241, 192, 76, 0.13),
+        transparent 62%
+      ),
+    var(--bg);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.16em;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+::selection {
+  background: rgba(227, 90, 45, 0.22);
+}
+
+:focus-visible {
+  outline: 3px solid rgba(227, 90, 45, 0.7);
+  outline-offset: 3px;
+}
+
+.container {
+  width: min(var(--max), calc(100% - 2 * var(--gutter)));
+  margin: 0 auto;
+}
+
+.skipLink {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  padding: 10px 12px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid var(--stroke);
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+  transform: translateY(-200%);
+  transition: transform 120ms ease;
+  z-index: 50;
+}
+
+.skipLink:focus {
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

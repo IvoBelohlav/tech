@@ -1,0 +1,23 @@
+{
+  "ci": {
+    "collect": {
+      "numberOfRuns": 1,
+      "url": ["http://127.0.0.1:4173/", "http://127.0.0.1:4173/privacy"],
+      "startServerCommand": "npm run build && PORT=4173 LEAD_WEBHOOK_URL=http://127.0.0.1:9/disabled npm run start",
+      "startServerReadyPattern": "Ready",
+      "settings": {
+        "chromeFlags": "--no-sandbox"
+      }
+    },
+    "assert": {
+      "assertions": {
+        "categories:performance": ["warn", { "minScore": 0.8 }],
+        "categories:accessibility": ["warn", { "minScore": 0.9 }],
+        "categories:seo": ["warn", { "minScore": 0.9 }]
+      }
+    },
+    "upload": {
+      "target": "filesystem"
+    }
+  }
+}
